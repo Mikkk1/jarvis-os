@@ -1,0 +1,81 @@
+{
+  "daily_tasks": [
+    {
+      "id": "arvr",
+      "name": "AR/VR Project Progress",
+      "priority": "CRITICAL",
+      "deadline": "2026-03-03",
+      "daily_time_minutes": 120,
+      "notes": "CRITICAL deadline in 6 days"
+    },
+    {
+      "id": "diss_wahab",
+      "name": "Dissertation Wahab",
+      "priority": "HIGH",
+      "deadline": "2026-03-25",
+      "daily_time_minutes": 60,
+      "notes": "12,000 word report, 30-day deadline"
+    },
+    {
+      "id": "diss_mujeeb",
+      "name": "Dissertation Mujeeb",
+      "priority": "HIGH",
+      "deadline": "2026-03-25",
+      "daily_time_minutes": 60,
+      "notes": "12,000 word report, 30-day deadline"
+    },
+    {
+      "id": "dsa_sql",
+      "name": "DSA + SQL Practice",
+      "priority": "MEDIUM",
+      "deadline": null,
+      "daily_time_minutes": 60,
+      "notes": "1 hour daily, efficient problem solving plan"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn Post / Content",
+      "priority": "MEDIUM",
+      "deadline": null,
+      "daily_time_minutes": 30,
+      "notes": "30 minutes daily, building in public"
+    },
+    {
+      "id": "journal",
+      "name": "Journal / Reflection",
+      "priority": "MEDIUM",
+      "deadline": null,
+      "daily_time_minutes": 60,
+      "notes": "After Namaz, 1 hour daily"
+    },
+    {
+      "id": "german",
+      "name": "German A1/A2 Study",
+      "priority": "HIGH",
+      "deadline": "2026-03-25",
+      "daily_time_minutes": 240,
+      "notes": "3-4 hours daily, A1 in 1 month target"
+    },
+    {
+      "id": "jarvis_build",
+      "name": "Jarvis OS / Project Building",
+      "priority": "HIGH",
+      "deadline": null,
+      "daily_time_minutes": 180,
+      "notes": "3-5 hours daily"
+    },
+    {
+      "id": "outreach",
+      "name": "Business Outreach",
+      "priority": "MEDIUM",
+      "deadline": null,
+      "daily_time_minutes": 30,
+      "notes": "Selling AI automations to local businesses"
+    }
+  ],
+  "schedule": {
+    "morning_briefing_time": "07:00",
+    "evening_summary_time": "22:00",
+    "timezone": "Asia/Karachi"
+  }
+}
