@@ -3,6 +3,7 @@ from typing import TypedDict, Literal
 from agents.briefing_agent import generate_morning_briefing
 from agents.task_agent import process_completion, get_completion_status
 from agents.logger_agent import generate_evening_summary
+from agents.scheduler_agent import get_next_task
 from services.messenger import send_message
 
 class JarvisState(TypedDict):
@@ -11,7 +12,7 @@ class JarvisState(TypedDict):
     response: str         # output message
     error: str            # error message if any
 
-def route_action(state: JarvisState) -> Literal["briefing", "task", "summary", "status"]:
+def route_action(state: JarvisState) -> Literal["briefing", "task", "summary", "next", "status"]:
     action = state.get("action", "")
     if action == "morning_briefing":
         return "briefing"
@@ -19,6 +20,8 @@ def route_action(state: JarvisState) -> Literal["briefing", "task", "summary", "
         return "task"
     elif action == "evening_summary":
         return "summary"
+    elif action == "next":
+        return "next"
     else:
         return "status"
 
@@ -54,6 +57,14 @@ def status_node(state: JarvisState) -> JarvisState:
     send_message(msg, "status")
     return {**state, "response": msg}
 
+def next_node(state: JarvisState) -> JarvisState:
+    try:
+        response = get_next_task()
+        send_message(response, "next_task")
+        return {**state, "response": response}
+    except Exception as e:
+        return {**state, "error": str(e), "response": f"Next task failed: {e}"}
+
 def build_graph() -> StateGraph:
     graph = StateGraph(JarvisState)
     
@@ -61,6 +72,7 @@ def build_graph() -> StateGraph:
     graph.add_node("task", task_node)
     graph.add_node("summary", summary_node)
     graph.add_node("status", status_node)
+    graph.add_node("next", next_node)
     
     graph.set_conditional_entry_point(
         route_action,
@@ -68,6 +80,7 @@ def build_graph() -> StateGraph:
             "briefing": "briefing",
             "task": "task",
             "summary": "summary",
+            "next": "next",
             "status": "status"
         }
     )
@@ -76,6 +89,7 @@ def build_graph() -> StateGraph:
     graph.add_edge("task", END)
     graph.add_edge("summary", END)
     graph.add_edge("status", END)
+    graph.add_edge("next", END)
     
     return graph.compile()
 

@@ -1,0 +1,129 @@
+{
+    "timezone": "Asia/Karachi",
+    "blocks": [
+        {
+            "id": "fajr_block",
+            "name": "Fajr Block",
+            "start": "05:00",
+            "end": "06:15",
+            "type": "prayer_personal",
+            "tasks": [
+                "journal",
+                "quran"
+            ]
+        },
+        {
+            "id": "morning_work_1",
+            "name": "Morning Work Block 1",
+            "start": "06:15",
+            "end": "07:45",
+            "type": "deep_work",
+            "tasks": [
+                "arvr",
+                "jarvis_build"
+            ]
+        },
+        {
+            "id": "morning_work_2",
+            "name": "Morning Work Block 2",
+            "start": "07:45",
+            "end": "09:15",
+            "type": "deep_work",
+            "tasks": [
+                "diss_wahab",
+                "diss_mujeeb"
+            ]
+        },
+        {
+            "id": "zuhr_break",
+            "name": "Zuhr + Rest",
+            "start": "12:30",
+            "end": "14:30",
+            "type": "prayer_rest",
+            "tasks": []
+        },
+        {
+            "id": "afternoon_work_1",
+            "name": "Afternoon Block 1",
+            "start": "14:30",
+            "end": "16:00",
+            "type": "deep_work",
+            "tasks": [
+                "german",
+                "dsa_sql"
+            ]
+        },
+        {
+            "id": "asr_block",
+            "name": "Asr Block",
+            "start": "16:00",
+            "end": "16:30",
+            "type": "prayer_personal",
+            "tasks": []
+        },
+        {
+            "id": "afternoon_work_2",
+            "name": "Afternoon Block 2",
+            "start": "16:30",
+            "end": "18:00",
+            "type": "deep_work",
+            "tasks": [
+                "german",
+                "outreach"
+            ]
+        },
+        {
+            "id": "maghrib_block",
+            "name": "Maghrib Block",
+            "start": "18:00",
+            "end": "18:30",
+            "type": "prayer_personal",
+            "tasks": []
+        },
+        {
+            "id": "evening_work_1",
+            "name": "Evening Block 1",
+            "start": "18:30",
+            "end": "20:00",
+            "type": "deep_work",
+            "tasks": [
+                "scale_pak_ai",
+                "outreach",
+                "linkedin"
+            ]
+        },
+        {
+            "id": "isha_block",
+            "name": "Isha Block",
+            "start": "20:00",
+            "end": "20:30",
+            "type": "prayer_personal",
+            "tasks": []
+        },
+        {
+            "id": "evening_work_2",
+            "name": "Evening Block 2",
+            "start": "20:30",
+            "end": "22:00",
+            "type": "deep_work",
+            "tasks": [
+                "jarvis_build",
+                "diss_wahab",
+                "diss_mujeeb"
+            ]
+        },
+        {
+            "id": "evening_summary",
+            "name": "Evening Wind Down",
+            "start": "22:00",
+            "end": "23:00",
+            "type": "review",
+            "tasks": [
+                "linkedin",
+                "journal"
+            ]
+        }
+    ],
+    "briefing_time": "06:15",
+    "summary_time": "22:00"
+}

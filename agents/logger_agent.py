@@ -1,4 +1,4 @@
-from services.gemini_service import generate_text
+from services.groq_service import generate_text
 from services.sheets_service import get_todays_completions
 from agents.task_agent import get_completion_status
 from datetime import date

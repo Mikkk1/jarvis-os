@@ -1,26 +1,18 @@
 from datetime import datetime
+import requests
+import os
+from dotenv import load_dotenv
 
-# In-memory message log (for testing without WhatsApp)
+load_dotenv()
+
 message_log = []
 
 def send_message(content: str, message_type: str = "general") -> dict:
-    """
-    Delivery layer for Jarvis messages.
-    Currently: prints to console + logs to memory.
-    Later: replace _send_whatsapp() with actual Meta API call.
-    """
     timestamp = datetime.now().isoformat()
-    message = {
-        "timestamp": timestamp,
-        "type": message_type,
-        "content": content
-    }
+    message = {"timestamp": timestamp, "type": message_type, "content": content}
     
-    # Console delivery (active now)
     _send_console(content, message_type)
-    
-    # WhatsApp delivery (deferred - uncomment when credentials ready)
-    # _send_whatsapp(content)
+    _send_whatsapp(content)
     
     message_log.append(message)
     return message
@@ -33,13 +25,24 @@ def _send_console(content: str, message_type: str):
     print('='*60 + "\n")
 
 def _send_whatsapp(content: str):
-    """
-    DEFERRED. Will use Meta WhatsApp Cloud API.
-    POST https://graph.facebook.com/v18.0/{PHONE_NUMBER_ID}/messages
-    Headers: Authorization: Bearer {ACCESS_TOKEN}
-    Body: { "messaging_product": "whatsapp", "to": "{RECIPIENT}", "type": "text", "text": {"body": content} }
-    """
-    pass
+    token = os.getenv("WHATSAPP_ACCESS_TOKEN")
+    phone_id = os.getenv("WHATSAPP_PHONE_NUMBER_ID")
+    recipient = os.getenv("WHATSAPP_RECIPIENT_NUMBER")
+    
+    url = f"https://graph.facebook.com/v22.0/{phone_id}/messages"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "messaging_product": "whatsapp",
+        "to": recipient,
+        "type": "text",
+        "text": {"body": content}
+    }
+    response = requests.post(url, headers=headers, json=payload)
+    if response.status_code != 200:
+        print(f"[WHATSAPP ERROR] {response.status_code}: {response.text}")
 
 def get_message_log() -> list:
     return message_log

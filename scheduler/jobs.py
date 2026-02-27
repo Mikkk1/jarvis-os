@@ -8,10 +8,10 @@ PKT = pytz.timezone("Asia/Karachi")
 def start_scheduler():
     scheduler = BackgroundScheduler(timezone=PKT)
     
-    # Morning briefing at 7:00 AM PKT
+    # Morning briefing at 6:15 AM PKT
     scheduler.add_job(
         func=lambda: run("morning_briefing"),
-        trigger=CronTrigger(hour=7, minute=0, timezone=PKT),
+        trigger=CronTrigger(hour=6, minute=15, timezone=PKT),
         id="morning_briefing",
         name="Morning Briefing",
         replace_existing=True
@@ -27,5 +27,5 @@ def start_scheduler():
     )
     
     scheduler.start()
-    print("[SCHEDULER] Started. Morning: 7:00 AM PKT | Evening: 10:00 PM PKT")
+    print("[SCHEDULER] Started. Morning: 6:15 AM PKT | Evening: 10:00 PM PKT")
     return scheduler

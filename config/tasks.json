@@ -6,7 +6,8 @@
       "priority": "CRITICAL",
       "deadline": "2026-03-03",
       "daily_time_minutes": 120,
-      "notes": "CRITICAL deadline in 6 days"
+      "block_category": "deep_work",
+      "notes": "CRITICAL deadline"
     },
     {
       "id": "diss_wahab",
@@ -14,6 +15,7 @@
       "priority": "HIGH",
       "deadline": "2026-03-25",
       "daily_time_minutes": 60,
+      "block_category": "deep_work",
       "notes": "12,000 word report, 30-day deadline"
     },
     {
@@ -22,6 +24,7 @@
       "priority": "HIGH",
       "deadline": "2026-03-25",
       "daily_time_minutes": 60,
+      "block_category": "deep_work",
       "notes": "12,000 word report, 30-day deadline"
     },
     {
@@ -30,6 +33,7 @@
       "priority": "MEDIUM",
       "deadline": null,
       "daily_time_minutes": 60,
+      "block_category": "deep_work",
       "notes": "1 hour daily, efficient problem solving plan"
     },
     {
@@ -38,6 +42,7 @@
       "priority": "MEDIUM",
       "deadline": null,
       "daily_time_minutes": 30,
+      "block_category": "deep_work",
       "notes": "30 minutes daily, building in public"
     },
     {
@@ -46,6 +51,7 @@
       "priority": "MEDIUM",
       "deadline": null,
       "daily_time_minutes": 60,
+      "block_category": "prayer_personal",
       "notes": "After Namaz, 1 hour daily"
     },
     {
@@ -54,6 +60,7 @@
       "priority": "HIGH",
       "deadline": "2026-03-25",
       "daily_time_minutes": 240,
+      "block_category": "deep_work",
       "notes": "3-4 hours daily, A1 in 1 month target"
     },
     {
@@ -62,6 +69,7 @@
       "priority": "HIGH",
       "deadline": null,
       "daily_time_minutes": 180,
+      "block_category": "deep_work",
       "notes": "3-5 hours daily"
     },
     {
@@ -70,11 +78,30 @@
       "priority": "MEDIUM",
       "deadline": null,
       "daily_time_minutes": 30,
+      "block_category": "deep_work",
       "notes": "Selling AI automations to local businesses"
+    },
+    {
+      "id": "quran",
+      "name": "Quran / Dhikr",
+      "priority": "HIGH",
+      "deadline": null,
+      "daily_time_minutes": 30,
+      "block_category": "prayer_personal",
+      "notes": "After Fajr"
+    },
+    {
+      "id": "scale_pak_ai",
+      "name": "Scale Pak AI",
+      "priority": "HIGH",
+      "deadline": null,
+      "daily_time_minutes": 60,
+      "block_category": "deep_work",
+      "notes": "Freelance AI automation business"
     }
   ],
   "schedule": {
-    "morning_briefing_time": "07:00",
+    "morning_briefing_time": "06:15",
     "evening_summary_time": "22:00",
     "timezone": "Asia/Karachi"
   }

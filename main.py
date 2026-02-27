@@ -56,6 +56,12 @@ def get_messages():
     """Get all messages sent today."""
     return {"messages": get_message_log()}
 
+@app.get("/next")
+def get_next():
+    """Returns the best task for the current time block."""
+    response = run("next")
+    return {"message": response}
+
 # ── RUN ────────────────────────────────────────────────────
 
 if __name__ == "__main__":
